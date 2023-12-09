@@ -60,27 +60,27 @@ app.get("/products", fetchProductsByFilter);
 app.get("/products/:id", fetchProductById);
 app.patch("/products/:id", updateProduct);
 
-// app.post("/brands", createBrand);
-// app.get("/brands", fetchBrands);
+app.post("/brands", createBrand);
+app.get("/brands", fetchBrands);
 
-// app.post("/categories", createCategory);
-// app.get("/categories", fetchCategories);
+app.post("/categories", createCategory);
+app.get("/categories", fetchCategories);
 
-// app.post("/auth/signup", createUser);
-// app.post("/auth/login", loginUser);
-// app.get("/auth/hasloginned", hasLoginnedUser);
-// app.patch("/users/:id", updateUser);
-// app.get("/users/:id", fetchUserById);
+app.post("/auth/signup", createUser);
+app.post("/auth/login", loginUser);
+app.get("/auth/hasloginned", hasLoginnedUser);
+app.patch("/users/:id", updateUser);
+app.get("/users/:id", fetchUserById);
 
-// app.post("/cart", addToCart);
-// app.get("/cart", fetchCartByUser);
-// app.delete("/cart/:id", deleteCartItem);
-// app.patch("/cart/:id", updateCartItem);
+app.post("/cart", addToCart);
+app.get("/cart", fetchCartByUser);
+app.delete("/cart/:id", deleteCartItem);
+app.patch("/cart/:id", updateCartItem);
 
-// app.post("/orders", createOrder);
-// app.get("/ordersOfUser", fetchUserOrders);
-// app.get("/orders", fetchOrders);
-// app.delete("/orders/:id", deleteOrder);
-// app.patch("/orders/:id", updateOrder);
+app.post("/orders", createOrder);
+app.get("/ordersOfUser", fetchUserOrders);
+app.get("/orders", fetchOrders);
+app.delete("/orders/:id", deleteOrder);
+app.patch("/orders/:id", updateOrder);
 
 app.listen(8080);
