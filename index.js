@@ -55,10 +55,10 @@ app.get("/", (req, resp) => {
   resp.send("I am Nodejs and i am here to help you for database communication");
 });
 
-// app.post("/products", createProduct);
-// app.get("/products", fetchProductsByFilter);
-// app.get("/products/:id", fetchProductById);
-// app.patch("/products/:id", updateProduct);
+app.post("/products", createProduct);
+app.get("/products", fetchProductsByFilter);
+app.get("/products/:id", fetchProductById);
+app.patch("/products/:id", updateProduct);
 
 // app.post("/brands", createBrand);
 // app.get("/brands", fetchBrands);
