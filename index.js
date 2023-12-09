@@ -39,7 +39,11 @@ app.use(
     secret: "Stay Signin secret",
     resave: true,
     saveUninitialized: true,
-    cookie: { secure: false, maxAge: 2 * 60000 },
+    cookie: {
+      secure: false,
+      expires: new Date(Date.now() + 60 * 10000),
+      maxAge: 2 * 60000,
+    },
   })
 );
 
