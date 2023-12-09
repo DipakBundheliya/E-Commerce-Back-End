@@ -41,7 +41,7 @@ app.use(
     saveUninitialized: true,
     cookie: {
       secure: false,
-      expires: new Date(Date.now() + 60 * 10000),
+      expires: new Date(Date.now() + 2 * 60000),
       maxAge: 2 * 60000,
     },
   })
