@@ -34,7 +34,6 @@ app.use(express.json()); // to parse req.body
 app.use(
   cors({
     exposedHeaders: ["X-Total-Count"],
-    credentials: true,
   })
 ); // to parse req.body
 // cookie parser middleware
