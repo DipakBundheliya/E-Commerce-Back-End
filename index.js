@@ -33,7 +33,7 @@ const { MongoClient } = require("mongodb");
 app.use(express.json()); // to parse req.body
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "https://e-commerce-front-end-lilac.vercel.app",
     credentials: true,
     exposedHeaders: ["X-Total-Count"],
   })
