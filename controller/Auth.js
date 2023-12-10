@@ -26,6 +26,7 @@ exports.createUser = async (req, resp) => {
 };
 
 exports.loginUser = async (req, resp) => {
+  console.log("call");
   try {
     const user = await User.findOne({ email: req.body.email });
     req.session.user = { userid: user.id, email: user.email, name: user.name };
@@ -58,8 +59,9 @@ exports.loginUser = async (req, resp) => {
 };
 
 exports.hasLoginnedUser = async (req, resp) => {
+  console.log(req.session);
   try {
-    if (req.session.user) {
+    if (req.session && req.session.user) {
       resp.status(200).json({
         id: req.session.user.userid,
         email: req.session.user.email,

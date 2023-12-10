@@ -79,9 +79,13 @@ const main = async () => {
   );
 
   app.get("/", (req, resp) => {
-    resp.send(
-      "I am Nodejs and i am here to help you for database communication"
-    );
+    if (req.secure) {
+      // The request was made using HTTPS
+      resp.send("This is an HTTPS request.");
+    } else {
+      // The request was made using HTTP
+      resp.send("This is an HTTP request.");
+    }
   });
 
   app.post("/products", createProduct);
