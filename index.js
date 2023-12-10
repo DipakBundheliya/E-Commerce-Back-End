@@ -53,7 +53,7 @@ const main = async () => {
   );
 
   console.log("database connected");
-
+  app.set("trust proxy", 1);
   app.use(
     session({
       secret: "Stay Signin secret",
