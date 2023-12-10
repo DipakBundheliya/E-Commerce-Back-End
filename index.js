@@ -60,8 +60,8 @@ const main = async () => {
       resave: false,
       saveUninitialized: true,
       cookie: {
-        sameSite: "lax",
-        secure: false, // Adjust as needed
+        sameSite: "None",
+        secure: true, // Adjust as needed
       },
       store: new MongoStore({
         client: client, // Use the MongoDB client
