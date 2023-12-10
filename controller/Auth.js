@@ -29,7 +29,7 @@ exports.loginUser = async (req, resp) => {
   try {
     const user = await User.findOne({ email: req.body.email });
     req.session.user = { userid: user.id, email: user.email, name: user.name };
-
+    console.log(req.session);
     setTimeout(() => {
       req.session.destroy((err) => {
         if (err) {
@@ -58,13 +58,19 @@ exports.loginUser = async (req, resp) => {
 };
 
 exports.hasLoginnedUser = async (req, resp) => {
-  if (req.session.user) {
-    resp.status(200).json({
-      id: req.session.user.userid,
-      email: req.session.user.email,
-      name: req.session.user.name,
-    });
-  } else {
-    resp.status(401).json({ message: "user is not signinned" });
+  try {
+    if (req.session.user) {
+      resp.status(200).json({
+        id: req.session.user.userid,
+        email: req.session.user.email,
+        name: req.session.user.name,
+      });
+    } else {
+      console.log(req.session, " is session");
+      resp.status(401).json({ message: "user is not signinned" });
+    }
+  } catch (err) {
+    console.error("Error in hasLoginnedUser:", err);
+    resp.status(500).json({ message: "Internal Server Error" });
   }
 };

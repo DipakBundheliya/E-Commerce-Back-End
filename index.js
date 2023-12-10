@@ -33,6 +33,8 @@ const { MongoClient } = require("mongodb");
 app.use(express.json()); // to parse req.body
 app.use(
   cors({
+    origin: "http://localhost:3000",
+    credentials: true,
     exposedHeaders: ["X-Total-Count"],
   })
 ); // to parse req.body
@@ -58,6 +60,7 @@ const main = async () => {
       resave: false,
       saveUninitialized: true,
       cookie: {
+        sameSite: "lax",
         secure: false, // Adjust as needed
       },
       store: new MongoStore({
