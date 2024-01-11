@@ -6,6 +6,8 @@ const userSchema = mongoose.Schema({
   password: { type: String, required: true },
   name: { type: String, required: true },
   role: { type: String, required: true, default: "user" },
+  about: { type: String },
+  image: { type: String },
   //   TODO: We can make separate schema for address
   addresses: { type: [mongoose.Mixed] },
 });
